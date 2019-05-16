@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+@mixin hoverTransition($transition) {
+  -webkit-transition: all $transition+s ease-in-out;
+  transition: all $transition+s ease-in-out;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: #eff1f3;
+  margin: 0;
+}
+body,
+button {font-family: Poppins, Helvetica, Arial, sans-serif;}
+
+a {
+  color: #f15641;
+  @include hoverTransition(0.3);
+
+  &:hover {
+    color: #000;;
+  }
+
+}
+
+::-moz-selection {background: transparent;}
+::selection {background: transparent;}
+
+.container {
+  max-width: 960px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+header {
+  p {
+    margin: 0;
+  }
+  h1 {
+    margin: 1rem 0 0 0;
+  }
+}
+
+button {
+  height: 40px;
+  border: 1px solid #ddd;
+  background: #e9ebee;
+  outline: none;
+  font-size: 1rem;
+  margin: 15px 15px 0 0;
+  cursor: pointer;
+
+  @include hoverTransition(0.3);
+
+  &:hover {
+    background: #f6f7f9;
+  }
+}
+
+#difficolta {
+  margin: 45px 0 0 0;
+
+  #startGame {
+    width: 100px;
+    height: 50px;
+  }
+}
+
+#punteggio {
+  margin: 35px 0 10px
+}
+
+#contenitoreListaBox {
+  margin: 0 0 0 -8px;
+
+  .box {
+    background: #c86f5e;
+    width: 100px;
+    height: 100px;
+    margin: 8px;
+    display: inline-flex;
+    vertical-align: top;
+    align-items: center;
+    justify-content: center;
+
+    #btn {
+      width: 75px;
+      height: 53px;
+      cursor: pointer;
+      background: url("../porco-ok.png") no-repeat center;
+
+      &:active {
+        background: url("../porco-morto.png") no-repeat center;
+      }
+
+    }
+  }
+}
